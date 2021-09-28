@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "categories": [1],
+        "name": "Test",
+        "ingredients":[
+            {
+            "unit":"kg",
+            "value": 12,
+            "name":"Apple"
+            }
+        ],
+        "discreption": "Bla-bla-bla",
+        "cookingTime":"30min",
+        "image_url":"https://avatars.mds.yandex.net/get-zen_doc/4787029/pub_60e1efa77671f13f0151b09f_60e1efc3f0ef723441f1c404/scale_1200",
+        "calories":1225
+    }
+]

@@ -8,8 +8,18 @@
 </mat-toolbar>
 <mat-drawer-container autosize>
   <mat-drawer #drawer mode="side" opened="false">
-    <p>Auto-resizing sidenav</p>
+    <mat-selection-list [multiple]="false" 
+    (selectionChange) = "loadRecipes($event.option.value)">
+      <mat-list-option *ngFor="let category of categories" [value]="category.id">
+        {{category.name}}
+      </mat-list-option>
+    </mat-selection-list>
   </mat-drawer>
+  <mat-grid-list cols="2" rowHeight="100%">
+    <mat-grid-tile *ngFor="let recipe of recipes">
+      <app-recipe [recipe]="recipe"></app-recipe>
+    </mat-grid-tile>
+  </mat-grid-list>
 
   
 

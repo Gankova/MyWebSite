@@ -1,0 +1,43 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>{{recipe.name}}</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <img     
+    mat-card-image [src]="recipe.image_url ? recipe.image_url : 'assets/no-photo.jpg'" alt="">
+    <mat-card-content>
+    <div class="info">
+        <mat-icon>settings_accessibility</mat-icon>
+        <span>{{recipe.calories}}  kcal</span>
+    </div>
+      <p>
+    {{recipe.discreption}}
+      </p>
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Ingredient
+            </mat-panel-title>
+            <mat-panel-description>
+              Clic to show ingredients
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item *ngFor="let ingr of recipe.ingredients">
+              <mat-icon mat-list-icon>fax</mat-icon>
+              <div mat-line>{{ingr.name}}</div>
+              <div mat-line> {{ingr.value}} {{ingr.unit}} </div>
+            </mat-list-item>
+        
+          </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-content>
+    <div class="info">
+        <mat-icon>watch_later</mat-icon>
+        <span>{{recipe.cookingTime}}</span>
+    </div>
+    
+  </mat-card>
+
